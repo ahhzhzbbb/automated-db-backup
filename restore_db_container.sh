@@ -10,7 +10,11 @@ RESTORE_DIR="${HOME}/restoredb"
 BUCKET="mariadb-backup"
 S3_API="https://8aa21ac41600f49624fe3a05cfec79ef.r2.cloudflarestorage.com"
 
-CONTAINER_ID="f740be72aeeb"
+if [[ -z "$1" ]]; then
+    echo "Usage: $0 + <containerID>" 
+fi
+
+CONTAINER_ID="$1"
 
 if [[ ! -e "$RESTORE_DIR" ]]; then
     mkdir "$RESTORE_DIR"
