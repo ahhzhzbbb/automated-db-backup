@@ -11,7 +11,8 @@ BUCKET="mariadb-backup"
 S3_API="https://8aa21ac41600f49624fe3a05cfec79ef.r2.cloudflarestorage.com"
 
 if [[ -z "$1" ]]; then
-    echo "Usage: $0 + <containerID>" 
+    echo "Usage: $0 + <containerID>"
+    exit 1
 fi
 
 CONTAINER_ID="$1"
